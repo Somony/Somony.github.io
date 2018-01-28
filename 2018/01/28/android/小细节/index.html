@@ -11,12 +11,21 @@
     
 
     
-    <meta property="og:type" content="website">
+    <meta name="description" content="限制EditText输入的字数xml: &amp;lt;FrameLayout         android:layout_width=&amp;quot;wrap_content&amp;quot;         android:layout_height=&amp;quot;wrap_content&amp;quot;&amp;gt;          &amp;lt;EditText             android:id=&amp;quot;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/android/小细节/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="限制EditText输入的字数xml: &amp;lt;FrameLayout         android:layout_width=&amp;quot;wrap_content&amp;quot;         android:layout_height=&amp;quot;wrap_content&amp;quot;&amp;gt;          &amp;lt;EditText             android:id=&amp;quot;">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/EFHHHh9CLf.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/I01gHjh9gI.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/JLbjFh6GCf.png?imageslim">
+<meta property="og:image" content="http://yoursite.com/2018/01/28/android/小细节/pic/imageView%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%E5%90%91%E4%B8%8A%E5%92%8C%E5%90%91%E5%B7%A6%E5%81%8F%E7%A7%BB.png">
+<meta property="og:updated_time" content="2018-01-28T14:13:59.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="限制EditText输入的字数xml: &amp;lt;FrameLayout         android:layout_width=&amp;quot;wrap_content&amp;quot;         android:layout_height=&amp;quot;wrap_content&amp;quot;&amp;gt;          &amp;lt;EditText             android:id=&amp;quot;">
+<meta name="twitter:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/EFHHHh9CLf.png?imageslim">
 
     
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,289 +78,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2018/01/28/README/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2018-01-28T14:13:59.000Z" itemprop="datePublished"> Published 2018-01-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="note"><a href="#note" class="headerlink" title="note"></a>note</h1><p>学习资料的笔记，包括</p>
-<ul>
-<li>android</li>
-<li>java</li>
-<li>web</li>
-<li>other</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2018/01/28/android/小细节2/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2018-01-28T14:13:59.000Z" itemprop="datePublished"> Published 2018-01-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="GPU呈现图的含义"><a href="#GPU呈现图的含义" class="headerlink" title="GPU呈现图的含义"></a>GPU呈现图的含义</h3><p><img src="http://p2qa028as.bkt.clouddn.com/blog/180118/k1IHc030BE.png?imageslim" alt="img"></p>
-<ul>
-<li><p>Misc</p>
-</li>
-<li><p>Input</p>
-<ul>
-<li>处理输入的事件的时间</li>
-<li>一般回调事件都在主线程处理，如果耗时较大，应该将回调中的逻辑放在子线程进行</li>
-<li><code>RecyclerView</code> 的滑动事件也属于这一范畴，<code>RecyclerView</code>的滑动消耗touch事件，并填充itemView</li>
-<li><code>Traceview</code> 或者 <code>Systrace</code>工具可以帮助分析</li>
-</ul>
-</li>
-<li><p>Animation</p>
-<ul>
-<li>显示<code>ObjectAnimator</code>, <code>ViewPropertyAnimator</code>和Transitions 的耗时</li>
-<li>耗时开销在执行动画属性的变化上，比如一个fling动画，大量的view加载和填充就会很耗时</li>
-</ul>
-</li>
-<li><p>Measurement/Layout</p>
-<ul>
-<li>view的measure和layout的时间消耗</li>
-<li>界面过于复杂，层次嵌套过深会消耗大量的时间</li>
-<li><code>Traceview</code> 或者 <code>Systrace</code>工具可以帮助分析</li>
-</ul>
-</li>
-<li><p>Draw</p>
-<ul>
-<li>view的绘制操作，与各种<code>draw()</code>方法有关的方法的耗时</li>
-<li>突然大量的view需要绘制，或者绘制逻辑过于复杂会消耗大量的时间</li>
-</ul>
-</li>
-<li><p>Sync/Upload</p>
-<ul>
-<li>bitmap从CPU内存转换到GPU内存的耗时，CPU和GPU内存区域不一样，当在将bitmap显示在屏幕上之前，会将bitmap从CPU内存转换到GPU内存，GPU内存中会缓存bitmap节约耗时</li>
-<li>所有的资源在draw之前都需要居于GPU中，大量小资源或者少量大资源都会开销大量时间</li>
-<li>避免使用过大分辨率的bitmap;下一次同步之前调用<code>prepareToDraw()</code>异步上传bitmap</li>
-</ul>
-<blockquote>
-<p>在5.0上这一块的颜色时紫色的</p>
-</blockquote>
-</li>
-<li><p>Issuing Commands</p>
-<ul>
-<li><p>将所有指令列表绘制到屏幕上需要的时间。为了让系统在屏幕上绘制显示列表，它将必要的命令发送到GPU。通常，它通过opengl es api来执行这个动作。这个过程需要一些时间，因为在将命令发送到GPU之前，系统对每个命令执行最终转换和剪切，会在GPU端产生额外的开销</p>
-</li>
-<li><p>一帧中对大量复杂的需要展示列表进行直接测量。例如，有大量的固定开销的draw操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++)</span><br><span class="line">canvas.drawPoint()</span><br></pre></td></tr></table></figure>
-<p>会比<code>canvas.drawPoints(mThousandPointArray);</code>更耗时</p>
-<p>这种差异的产生是因为显示列表尽可能被系统高速缓存。因此，在某些情况下，滚动，转换或动画需要系统重新发送显示列表，但不必从头开始重新创建它，重新获取绘图命令。结果，你可以看到一个高的“Issue commands”栏而不会看到一个高的”Draw commands”栏</p>
-</li>
-</ul>
-</li>
-<li><p>Processing/Swapping Buffers</p>
-<ul>
-<li>当讲所有的显示列表发送给GPU后，系统最终告诉图像驱动已经完成这一帧，此时需要最终将图像呈现在屏幕上</li>
-<li>GPU的工作和CPU是并行的，系统发出绘制命令给GPU后就执行下一条指令，GPU从队列中取出任务执行。当CPU的发出指令的速度大于了GPU的执行指令的速度，那么CPU就会阻塞直到GPU有空间执行之后的指令。这中情况经常会在Swap Buffers阶段出现，因为这个阶段所有的指令都被提交到GPU了。缓解这个问题的办法只有减少”Issue Commands”中复杂的工作</li>
-</ul>
-</li>
-<li><p>Miscellanenous</p>
-<ul>
-<li>除了渲染系统执行其工作所需的时间之外，还有一组额外的工作发生在主线程上，并且与渲染无关。这项工作消耗的时间被报告为misc时间。混杂时间通常表示可能在两个连续的渲染帧之间的UI线程上发生的工作。</li>
-<li>如果这个时间很长，那app中存在callback，intent和别的工作应该在子线程执行，可以采用<code>Method Tracing</code>或者<code>Systrace</code>工具追踪执行在主线程的方法</li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2018/01/28/other/UML/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2018-01-28T14:13:59.000Z" itemprop="datePublished"> Published 2018-01-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h2><p> 理解UML类图中各个类之间的线条、箭头代表什么意思，将类图所表达的含义和最终的代码对应起来</p>
-<p><img src="http://p2qa028as.bkt.clouddn.com/blog/180125/FdFjmbjBbH.png?imageslim" alt="UML类图"></p>
-<ul>
-<li><p>泛化关系（generalization）</p>
-<ul>
-<li>表现为继承非抽象类</li>
-<li>使用一条实线加空心箭头表示</li>
-</ul>
-<p>​        <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/c03dkiF23i.png?imageslim" alt="泛化关系"></p>
-</li>
-</ul>
-<ul>
-<li><p>实现关系（realize）</p>
-<ul>
-<li>表现为继承抽象类</li>
-<li>使用一条虚线加空心箭头表示</li>
-</ul>
-<p>​       <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/j7F9dFGC4L.png?imageslim" alt="实现关系"></p>
-</li>
-<li><p>聚合关系（aggregation）</p>
-<ul>
-<li>用于表现实体和对象的关系，表示整体由部分构成</li>
-<li><strong>聚合关系中，整体和部分不是强依赖关系</strong>，即使整体不存在了，部分仍然存在</li>
-<li>使用一条实线加一个空心菱形表示</li>
-</ul>
-<p>​       <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/AehK8jACdi.png?imageslim" alt="聚合关系"></p>
-</li>
-<li><p>组合关系（composition）</p>
-<ul>
-<li>与聚合关系一样，组合关系同样表示整体由部分构成</li>
-<li><strong>组合关系是一种强依赖关系</strong>，如果整体不存在了，那么部分也就不存在了</li>
-<li>使用一条实线加一个实心菱形表示</li>
-</ul>
-<p>​       <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/7BgK7D3FGc.png?imageslim" alt="组合关系"></p>
-</li>
-<li><p>关联关系（association）</p>
-<ul>
-<li>描述不同类的对象之间的结构关系，它是一种静态关系，通常与运行状态无关，一般由常识等因素决定，一般用来定义对象之间静态的、天然的结构。所以是一种强关联的关系</li>
-<li>关联关系默认不强调方向，表示对象间互相知道；若强调方向，那么只有一方知道另一方，另一方不知道对方</li>
-<li>关联对象通常是以成员变量的形式表现的<ul>
-<li>默认使用一条实线表示；强调方向的话，加一个&gt;(完整是”-&gt;”)</li>
-</ul>
-</li>
-</ul>
-<p>​      <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/kj1KKHmmeA.png?imageslim" alt="关联关系"></p>
-</li>
-<li><p>依赖关系（dependency）</p>
-<ul>
-<li>它描述一个对象在运行期间会用到另一个对象的关系</li>
-<li><strong>与关联关系不同的是</strong>，他是一种临时性的关系，通常在运行期间产生，并且随着运行时的变化依赖关系也可能发生变化</li>
-<li>依赖关系是有方向的，应该总是抱持单向依赖，杜绝双向依赖</li>
-<li>依赖关系通常体现在类的构造方法及类方法传入的参数</li>
-<li>使用一条带箭头的虚线表示（—-&gt;），箭头的指向为调用关系</li>
-</ul>
-<p>​      <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/5fdGDKJKBK.png?imageslim" alt="依赖关系"></p>
-</li>
-</ul>
-<p>参考：<br><a href="http://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html" target="_blank" rel="noopener">http://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2018/01/28/android/小细节/" title="" itemprop="url"></a>
@@ -365,9 +95,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <h3 id="限制EditText输入的字数"><a href="#限制EditText输入的字数" class="headerlink" title="限制EditText输入的字数"></a>限制EditText输入的字数</h3><p>xml:</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#限制EditText输入的字数"><span class="toc-number">1.</span> <span class="toc-text">限制EditText输入的字数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText只接受数字，其余无法输入到EditText中"><span class="toc-number">2.</span> <span class="toc-text">EditText只接受数字，其余无法输入到EditText中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText修改Cursor颜色"><span class="toc-number">3.</span> <span class="toc-text">EditText修改Cursor颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText密码输入框的可见与不可见切换"><span class="toc-number">4.</span> <span class="toc-text">EditText密码输入框的可见与不可见切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText属性设置"><span class="toc-number">5.</span> <span class="toc-text">EditText属性设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-windowSoftInputMode属性详解"><span class="toc-number">6.</span> <span class="toc-text">android:windowSoftInputMode属性详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-MarginLeft与MarginStart的区别"><span class="toc-number">7.</span> <span class="toc-text">Android MarginLeft与MarginStart的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fragment数据懒加载"><span class="toc-number">8.</span> <span class="toc-text">Fragment数据懒加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView嵌套LinearLayout-LinearLayout不铺满屏幕问题"><span class="toc-number">9.</span> <span class="toc-text">ScrollView嵌套LinearLayout,LinearLayout不铺满屏幕问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RecyclerView使用注意"><span class="toc-number">10.</span> <span class="toc-text">RecyclerView使用注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现嵌套滑动"><span class="toc-number">11.</span> <span class="toc-text">实现嵌套滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java继承细节"><span class="toc-number">12.</span> <span class="toc-text">java继承细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView监听滑动到底部和顶部"><span class="toc-number">13.</span> <span class="toc-text">ScrollView监听滑动到底部和顶部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性动画"><span class="toc-number">14.</span> <span class="toc-text">属性动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义View-ViewGroup的过程"><span class="toc-number">15.</span> <span class="toc-text">自定义View/ViewGroup的过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一些特殊属性的支持"><span class="toc-number">15.1.</span> <span class="toc-text">一些特殊属性的支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滑动中的值"><span class="toc-number">16.</span> <span class="toc-text">滑动中的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#canvas画图细节和技巧"><span class="toc-number">17.</span> <span class="toc-text">canvas画图细节和技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-studio中的app的class文件目录"><span class="toc-number">18.</span> <span class="toc-text">android studio中的app的class文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用gradle打release包，不将密码放在build-gradle中"><span class="toc-number">19.</span> <span class="toc-text">使用gradle打release包，不将密码放在build.gradle中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RecyclerView-notify的注意点"><span class="toc-number">20.</span> <span class="toc-text">RecyclerView notify的注意点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewStub注意点"><span class="toc-number">21.</span> <span class="toc-text">ViewStub注意点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#intent传递数据的替代"><span class="toc-number">22.</span> <span class="toc-text">intent传递数据的替代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ImageView加载不出来bitmap"><span class="toc-number">23.</span> <span class="toc-text">ImageView加载不出来bitmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rxjava2-doOnxx方法"><span class="toc-number">24.</span> <span class="toc-text">Rxjava2 doOnxx方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取manifest文件中组件中节点下的value数据"><span class="toc-number">25.</span> <span class="toc-text">获取manifest文件中组件中节点下的value数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view的点击水波纹"><span class="toc-number">26.</span> <span class="toc-text">view的点击水波纹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决重复点击"><span class="toc-number">27.</span> <span class="toc-text">解决重复点击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现双击事件"><span class="toc-number">28.</span> <span class="toc-text">实现双击事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断键盘是否弹出"><span class="toc-number">29.</span> <span class="toc-text">判断键盘是否弹出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView滑动到底部-顶部"><span class="toc-number">30.</span> <span class="toc-text">ScrollView滑动到底部/顶部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘弹出时需要将内容上顶"><span class="toc-number">31.</span> <span class="toc-text">键盘弹出时需要将内容上顶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dialog使用wrap-content"><span class="toc-number">32.</span> <span class="toc-text">Dialog使用wrap_content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#minHeight和padding的关系"><span class="toc-number">33.</span> <span class="toc-text">minHeight和padding的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java内部类"><span class="toc-number">34.</span> <span class="toc-text">java内部类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个数一定时间内一个范围内变化"><span class="toc-number">35.</span> <span class="toc-text">一个数一定时间内一个范围内变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TypeEvaluator和Interpolator"><span class="toc-number">36.</span> <span class="toc-text">TypeEvaluator和Interpolator</span></a></li></ol>
+		
+		</div>
+		
+		<h3 id="限制EditText输入的字数"><a href="#限制EditText输入的字数" class="headerlink" title="限制EditText输入的字数"></a>限制EditText输入的字数</h3><p>xml:</p>
 <pre><code>&lt;FrameLayout
         android:layout_width=&quot;wrap_content&quot;
         android:layout_height=&quot;wrap_content&quot;&gt;
@@ -1022,100 +759,63 @@ setOnTouchListener(new View.OnTouchListener() {
 <p> 设置 属性值 从初始值过渡到结束值 的变化具体数值 ​</p>
 </li>
 </ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/07/hello-world/" title="hello-world" itemprop="url">hello-world</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-07T00:55:29.000Z" itemprop="datePublished"> Published 2014-11-07</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/07/hello-world/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/other/">other</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/hello/">hello</a>
-  </div>
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
 
 </div>
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2018/01/28/android/小细节/" data-title="Hexo" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/01/28/other/UML/" title="">
+  <strong>上一篇：</strong><br/>
+  <span>
+  (no title)</span>
+</a>
 </div>
+
+
+<div class="next">
+<a href="/2014/11/07/hello-world/"  title="hello-world">
+ <strong>下一篇：</strong><br/> 
+ <span>hello-world
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#限制EditText输入的字数"><span class="toc-number">1.</span> <span class="toc-text">限制EditText输入的字数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText只接受数字，其余无法输入到EditText中"><span class="toc-number">2.</span> <span class="toc-text">EditText只接受数字，其余无法输入到EditText中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText修改Cursor颜色"><span class="toc-number">3.</span> <span class="toc-text">EditText修改Cursor颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText密码输入框的可见与不可见切换"><span class="toc-number">4.</span> <span class="toc-text">EditText密码输入框的可见与不可见切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditText属性设置"><span class="toc-number">5.</span> <span class="toc-text">EditText属性设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-windowSoftInputMode属性详解"><span class="toc-number">6.</span> <span class="toc-text">android:windowSoftInputMode属性详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-MarginLeft与MarginStart的区别"><span class="toc-number">7.</span> <span class="toc-text">Android MarginLeft与MarginStart的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fragment数据懒加载"><span class="toc-number">8.</span> <span class="toc-text">Fragment数据懒加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView嵌套LinearLayout-LinearLayout不铺满屏幕问题"><span class="toc-number">9.</span> <span class="toc-text">ScrollView嵌套LinearLayout,LinearLayout不铺满屏幕问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RecyclerView使用注意"><span class="toc-number">10.</span> <span class="toc-text">RecyclerView使用注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现嵌套滑动"><span class="toc-number">11.</span> <span class="toc-text">实现嵌套滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java继承细节"><span class="toc-number">12.</span> <span class="toc-text">java继承细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView监听滑动到底部和顶部"><span class="toc-number">13.</span> <span class="toc-text">ScrollView监听滑动到底部和顶部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性动画"><span class="toc-number">14.</span> <span class="toc-text">属性动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义View-ViewGroup的过程"><span class="toc-number">15.</span> <span class="toc-text">自定义View/ViewGroup的过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一些特殊属性的支持"><span class="toc-number">15.1.</span> <span class="toc-text">一些特殊属性的支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滑动中的值"><span class="toc-number">16.</span> <span class="toc-text">滑动中的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#canvas画图细节和技巧"><span class="toc-number">17.</span> <span class="toc-text">canvas画图细节和技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-studio中的app的class文件目录"><span class="toc-number">18.</span> <span class="toc-text">android studio中的app的class文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用gradle打release包，不将密码放在build-gradle中"><span class="toc-number">19.</span> <span class="toc-text">使用gradle打release包，不将密码放在build.gradle中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RecyclerView-notify的注意点"><span class="toc-number">20.</span> <span class="toc-text">RecyclerView notify的注意点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewStub注意点"><span class="toc-number">21.</span> <span class="toc-text">ViewStub注意点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#intent传递数据的替代"><span class="toc-number">22.</span> <span class="toc-text">intent传递数据的替代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ImageView加载不出来bitmap"><span class="toc-number">23.</span> <span class="toc-text">ImageView加载不出来bitmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rxjava2-doOnxx方法"><span class="toc-number">24.</span> <span class="toc-text">Rxjava2 doOnxx方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取manifest文件中组件中节点下的value数据"><span class="toc-number">25.</span> <span class="toc-text">获取manifest文件中组件中节点下的value数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view的点击水波纹"><span class="toc-number">26.</span> <span class="toc-text">view的点击水波纹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决重复点击"><span class="toc-number">27.</span> <span class="toc-text">解决重复点击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现双击事件"><span class="toc-number">28.</span> <span class="toc-text">实现双击事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断键盘是否弹出"><span class="toc-number">29.</span> <span class="toc-text">判断键盘是否弹出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView滑动到底部-顶部"><span class="toc-number">30.</span> <span class="toc-text">ScrollView滑动到底部/顶部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘弹出时需要将内容上顶"><span class="toc-number">31.</span> <span class="toc-text">键盘弹出时需要将内容上顶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dialog使用wrap-content"><span class="toc-number">32.</span> <span class="toc-text">Dialog使用wrap_content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#minHeight和padding的关系"><span class="toc-number">33.</span> <span class="toc-text">minHeight和padding的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java内部类"><span class="toc-number">34.</span> <span class="toc-text">java内部类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个数一定时间内一个范围内变化"><span class="toc-number">35.</span> <span class="toc-text">一个数一定时间内一个范围内变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TypeEvaluator和Interpolator"><span class="toc-number">36.</span> <span class="toc-text">TypeEvaluator和Interpolator</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -1236,12 +936,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -1314,4 +1091,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>

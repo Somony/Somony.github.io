@@ -1,0 +1,500 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta name="description" content="UML类图 理解UML类图中各个类之间的线条、箭头代表什么意思，将类图所表达的含义和最终的代码对应起来   泛化关系（generalization）  表现为继承非抽象类 使用一条实线加空心箭头表示  ​            实现关系（realize）  表现为继承抽象类 使用一条虚线加空心箭头表示  ​         聚合关系（aggregation）  用于表现实体和对象的关系，表示整体由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/other/UML/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="UML类图 理解UML类图中各个类之间的线条、箭头代表什么意思，将类图所表达的含义和最终的代码对应起来   泛化关系（generalization）  表现为继承非抽象类 使用一条实线加空心箭头表示  ​            实现关系（realize）  表现为继承抽象类 使用一条虚线加空心箭头表示  ​         聚合关系（aggregation）  用于表现实体和对象的关系，表示整体由">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/FdFjmbjBbH.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/c03dkiF23i.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/j7F9dFGC4L.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/AehK8jACdi.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/7BgK7D3FGc.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/kj1KKHmmeA.png?imageslim">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/5fdGDKJKBK.png?imageslim">
+<meta property="og:updated_time" content="2018-01-28T14:13:59.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="UML类图 理解UML类图中各个类之间的线条、箭头代表什么意思，将类图所表达的含义和最终的代码对应起来   泛化关系（generalization）  表现为继承非抽象类 使用一条实线加空心箭头表示  ​            实现关系（realize）  表现为继承抽象类 使用一条虚线加空心箭头表示  ​         聚合关系（aggregation）  用于表现实体和对象的关系，表示整体由">
+<meta name="twitter:image" content="http://p2qa028as.bkt.clouddn.com/blog/180125/FdFjmbjBbH.png?imageslim">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/01/28/other/UML/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2018-01-28T14:13:59.000Z" itemprop="datePublished"> Published 2018-01-28</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UML类图"><span class="toc-number">1.</span> <span class="toc-text">UML类图</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h2><p> 理解UML类图中各个类之间的线条、箭头代表什么意思，将类图所表达的含义和最终的代码对应起来</p>
+<p><img src="http://p2qa028as.bkt.clouddn.com/blog/180125/FdFjmbjBbH.png?imageslim" alt="UML类图"></p>
+<ul>
+<li><p>泛化关系（generalization）</p>
+<ul>
+<li>表现为继承非抽象类</li>
+<li>使用一条实线加空心箭头表示</li>
+</ul>
+<p>​        <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/c03dkiF23i.png?imageslim" alt="泛化关系"></p>
+</li>
+</ul>
+<ul>
+<li><p>实现关系（realize）</p>
+<ul>
+<li>表现为继承抽象类</li>
+<li>使用一条虚线加空心箭头表示</li>
+</ul>
+<p>​       <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/j7F9dFGC4L.png?imageslim" alt="实现关系"></p>
+</li>
+<li><p>聚合关系（aggregation）</p>
+<ul>
+<li>用于表现实体和对象的关系，表示整体由部分构成</li>
+<li><strong>聚合关系中，整体和部分不是强依赖关系</strong>，即使整体不存在了，部分仍然存在</li>
+<li>使用一条实线加一个空心菱形表示</li>
+</ul>
+<p>​       <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/AehK8jACdi.png?imageslim" alt="聚合关系"></p>
+</li>
+<li><p>组合关系（composition）</p>
+<ul>
+<li>与聚合关系一样，组合关系同样表示整体由部分构成</li>
+<li><strong>组合关系是一种强依赖关系</strong>，如果整体不存在了，那么部分也就不存在了</li>
+<li>使用一条实线加一个实心菱形表示</li>
+</ul>
+<p>​       <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/7BgK7D3FGc.png?imageslim" alt="组合关系"></p>
+</li>
+<li><p>关联关系（association）</p>
+<ul>
+<li>描述不同类的对象之间的结构关系，它是一种静态关系，通常与运行状态无关，一般由常识等因素决定，一般用来定义对象之间静态的、天然的结构。所以是一种强关联的关系</li>
+<li>关联关系默认不强调方向，表示对象间互相知道；若强调方向，那么只有一方知道另一方，另一方不知道对方</li>
+<li>关联对象通常是以成员变量的形式表现的<ul>
+<li>默认使用一条实线表示；强调方向的话，加一个&gt;(完整是”-&gt;”)</li>
+</ul>
+</li>
+</ul>
+<p>​      <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/kj1KKHmmeA.png?imageslim" alt="关联关系"></p>
+</li>
+<li><p>依赖关系（dependency）</p>
+<ul>
+<li>它描述一个对象在运行期间会用到另一个对象的关系</li>
+<li><strong>与关联关系不同的是</strong>，他是一种临时性的关系，通常在运行期间产生，并且随着运行时的变化依赖关系也可能发生变化</li>
+<li>依赖关系是有方向的，应该总是抱持单向依赖，杜绝双向依赖</li>
+<li>依赖关系通常体现在类的构造方法及类方法传入的参数</li>
+<li>使用一条带箭头的虚线表示（—-&gt;），箭头的指向为调用关系</li>
+</ul>
+<p>​      <img src="http://p2qa028as.bkt.clouddn.com/blog/180125/5fdGDKJKBK.png?imageslim" alt="依赖关系"></p>
+</li>
+</ul>
+<p>参考：<br><a href="http://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html" target="_blank" rel="noopener">http://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/01/28/other/UML/" data-title="Hexo" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/01/28/android/小细节2/" title="">
+  <strong>上一篇：</strong><br/>
+  <span>
+  (no title)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/01/28/android/小细节/"  title="">
+ <strong>下一篇：</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UML类图"><span class="toc-number">1.</span> <span class="toc-text">UML类图</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/other/" title="other">other<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/hello/" title="hello">hello<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

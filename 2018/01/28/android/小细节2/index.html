@@ -1,0 +1,501 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta name="description" content="GPU呈现图的含义  Misc  Input  处理输入的事件的时间 一般回调事件都在主线程处理，如果耗时较大，应该将回调中的逻辑放在子线程进行 RecyclerView 的滑动事件也属于这一范畴，RecyclerView的滑动消耗touch事件，并填充itemView Traceview 或者 Systrace工具可以帮助分析   Animation  显示ObjectAnimator, Vie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/android/小细节2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="GPU呈现图的含义  Misc  Input  处理输入的事件的时间 一般回调事件都在主线程处理，如果耗时较大，应该将回调中的逻辑放在子线程进行 RecyclerView 的滑动事件也属于这一范畴，RecyclerView的滑动消耗touch事件，并填充itemView Traceview 或者 Systrace工具可以帮助分析   Animation  显示ObjectAnimator, Vie">
+<meta property="og:image" content="http://p2qa028as.bkt.clouddn.com/blog/180118/k1IHc030BE.png?imageslim">
+<meta property="og:updated_time" content="2018-01-28T14:13:59.050Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="GPU呈现图的含义  Misc  Input  处理输入的事件的时间 一般回调事件都在主线程处理，如果耗时较大，应该将回调中的逻辑放在子线程进行 RecyclerView 的滑动事件也属于这一范畴，RecyclerView的滑动消耗touch事件，并填充itemView Traceview 或者 Systrace工具可以帮助分析   Animation  显示ObjectAnimator, Vie">
+<meta name="twitter:image" content="http://p2qa028as.bkt.clouddn.com/blog/180118/k1IHc030BE.png?imageslim">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/01/28/android/小细节2/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2018-01-28T14:13:59.000Z" itemprop="datePublished"> Published 2018-01-28</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#GPU呈现图的含义"><span class="toc-number">1.</span> <span class="toc-text">GPU呈现图的含义</span></a></li></ol>
+		
+		</div>
+		
+		<h3 id="GPU呈现图的含义"><a href="#GPU呈现图的含义" class="headerlink" title="GPU呈现图的含义"></a>GPU呈现图的含义</h3><p><img src="http://p2qa028as.bkt.clouddn.com/blog/180118/k1IHc030BE.png?imageslim" alt="img"></p>
+<ul>
+<li><p>Misc</p>
+</li>
+<li><p>Input</p>
+<ul>
+<li>处理输入的事件的时间</li>
+<li>一般回调事件都在主线程处理，如果耗时较大，应该将回调中的逻辑放在子线程进行</li>
+<li><code>RecyclerView</code> 的滑动事件也属于这一范畴，<code>RecyclerView</code>的滑动消耗touch事件，并填充itemView</li>
+<li><code>Traceview</code> 或者 <code>Systrace</code>工具可以帮助分析</li>
+</ul>
+</li>
+<li><p>Animation</p>
+<ul>
+<li>显示<code>ObjectAnimator</code>, <code>ViewPropertyAnimator</code>和Transitions 的耗时</li>
+<li>耗时开销在执行动画属性的变化上，比如一个fling动画，大量的view加载和填充就会很耗时</li>
+</ul>
+</li>
+<li><p>Measurement/Layout</p>
+<ul>
+<li>view的measure和layout的时间消耗</li>
+<li>界面过于复杂，层次嵌套过深会消耗大量的时间</li>
+<li><code>Traceview</code> 或者 <code>Systrace</code>工具可以帮助分析</li>
+</ul>
+</li>
+<li><p>Draw</p>
+<ul>
+<li>view的绘制操作，与各种<code>draw()</code>方法有关的方法的耗时</li>
+<li>突然大量的view需要绘制，或者绘制逻辑过于复杂会消耗大量的时间</li>
+</ul>
+</li>
+<li><p>Sync/Upload</p>
+<ul>
+<li>bitmap从CPU内存转换到GPU内存的耗时，CPU和GPU内存区域不一样，当在将bitmap显示在屏幕上之前，会将bitmap从CPU内存转换到GPU内存，GPU内存中会缓存bitmap节约耗时</li>
+<li>所有的资源在draw之前都需要居于GPU中，大量小资源或者少量大资源都会开销大量时间</li>
+<li>避免使用过大分辨率的bitmap;下一次同步之前调用<code>prepareToDraw()</code>异步上传bitmap</li>
+</ul>
+<blockquote>
+<p>在5.0上这一块的颜色时紫色的</p>
+</blockquote>
+</li>
+<li><p>Issuing Commands</p>
+<ul>
+<li><p>将所有指令列表绘制到屏幕上需要的时间。为了让系统在屏幕上绘制显示列表，它将必要的命令发送到GPU。通常，它通过opengl es api来执行这个动作。这个过程需要一些时间，因为在将命令发送到GPU之前，系统对每个命令执行最终转换和剪切，会在GPU端产生额外的开销</p>
+</li>
+<li><p>一帧中对大量复杂的需要展示列表进行直接测量。例如，有大量的固定开销的draw操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++)</span><br><span class="line">canvas.drawPoint()</span><br></pre></td></tr></table></figure>
+<p>会比<code>canvas.drawPoints(mThousandPointArray);</code>更耗时</p>
+<p>这种差异的产生是因为显示列表尽可能被系统高速缓存。因此，在某些情况下，滚动，转换或动画需要系统重新发送显示列表，但不必从头开始重新创建它，重新获取绘图命令。结果，你可以看到一个高的“Issue commands”栏而不会看到一个高的”Draw commands”栏</p>
+</li>
+</ul>
+</li>
+<li><p>Processing/Swapping Buffers</p>
+<ul>
+<li>当讲所有的显示列表发送给GPU后，系统最终告诉图像驱动已经完成这一帧，此时需要最终将图像呈现在屏幕上</li>
+<li>GPU的工作和CPU是并行的，系统发出绘制命令给GPU后就执行下一条指令，GPU从队列中取出任务执行。当CPU的发出指令的速度大于了GPU的执行指令的速度，那么CPU就会阻塞直到GPU有空间执行之后的指令。这中情况经常会在Swap Buffers阶段出现，因为这个阶段所有的指令都被提交到GPU了。缓解这个问题的办法只有减少”Issue Commands”中复杂的工作</li>
+</ul>
+</li>
+<li><p>Miscellanenous</p>
+<ul>
+<li>除了渲染系统执行其工作所需的时间之外，还有一组额外的工作发生在主线程上，并且与渲染无关。这项工作消耗的时间被报告为misc时间。混杂时间通常表示可能在两个连续的渲染帧之间的UI线程上发生的工作。</li>
+<li>如果这个时间很长，那app中存在callback，intent和别的工作应该在子线程执行，可以采用<code>Method Tracing</code>或者<code>Systrace</code>工具追踪执行在主线程的方法</li>
+</ul>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/01/28/android/小细节2/" data-title="Hexo" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/01/28/README/" title="">
+  <strong>上一篇：</strong><br/>
+  <span>
+  (no title)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/01/28/other/UML/"  title="">
+ <strong>下一篇：</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#GPU呈现图的含义"><span class="toc-number">1.</span> <span class="toc-text">GPU呈现图的含义</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/other/" title="other">other<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/hello/" title="hello">hello<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
